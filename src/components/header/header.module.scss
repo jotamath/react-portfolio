@@ -1,0 +1,105 @@
+@import '@styles/typography.scss';
+
+.root {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+    padding: 0 20px;
+
+    @media (max-width: 455px) {
+        padding: 0 16px;
+    }
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    @media (max-width: 768px) {
+        display: none;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background-color: rgb(233, 114, 114);
+        padding: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+        &.menuOpen {
+            display: flex;
+        }
+    }
+}
+
+.menuButton {
+    padding: 0.8rem 1.5rem;
+    font: var(--button-font);
+    color: #000;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+
+    @media (max-width: 768px) {
+        width: 100%;
+        text-align: center;
+        padding: 1rem;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+    }
+}
+
+.mobileMenuButton {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    color: #000;
+
+    @media (max-width: 768px) {
+        display: block;
+    }
+
+    svg {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.active {
+    font-weight: 500;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.logo {
+    font: 700 18px/1.5 var(--my-pretty-font);
+    height: fit-content;
+    color: #000;
+    text-decoration: none;
+
+    @media (max-width: 455px) {
+        font-size: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (width < 455px) {
+    .root {
+        display: flex;
+        justify-content: center;
+        padding: 0px;
+    }
+    .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 8px;
+    }
+}
